@@ -15,9 +15,42 @@
 ###########################################
 
 class List
-    attr_accessor :node
+    attr_accessor :node, :list
+    attr_reader :size, :str
 
     def initialize
-        @node = Node.new
+        @list = Array.new
+        @length = @list.length
+    end
+
+    def create_node(data=nil, pointer=nil)
+        @node = Node.new(data, pointer)
+    end
+
+    def append(data)
+        @node_index = @list.size
+        @node = Node.new(data)
+        @list.push(@node)
+        @list[@node_index].node[:pointer] = @node_index
+
+
+        p @list
+    end
+
+    def size
+        @size = @list.length
+    end
+
+    def to_s
+        @str = ""
+
+        @list.each_with_index do |node, i|
+            if i == (@list.length - 1)
+                @str += "( #{node.node[:data]} ) -> nil"
+            else
+                @str += "(  #{node.node[:data]} ) -> "
+            end
+        end
+        @str
     end
 end

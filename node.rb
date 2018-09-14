@@ -3,21 +3,20 @@
 ###########################################
 # create: NODE to be inserted into list   #
 # is_tail?: checks if NEXT -> NULL        #
-# contains?(el): TRUE if (el) exists      #
-# contains?(el): TRUE if (el) exists      #
-# contains?(el): TRUE if (el) exists      #
-# contains?(el): TRUE if (el) exists      #
-# contains?(el): TRUE if (el) exists      #
+###########################################
+###########################################
+###########################################
+###########################################
+###########################################
 ###########################################
 
 class Node
-    attr_accessor :data
+    attr_accessor :node
 
-    def initialize
-        self.create
-    end
-
-    def create(data=nil)
-        @data = data
+    def initialize(data=nil, pointer=nil)
+        @node = {
+            :data => data,
+            :pointer => pointer
+        }
     end
 end
