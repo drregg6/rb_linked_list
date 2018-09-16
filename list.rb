@@ -2,7 +2,7 @@
 #                METHODS                  #
 ###########################################
 # append: add new node to the end         #xx
-# prepend: add new node to the beginning  #
+# prepend: add new node to the beginning  #xx
 # size: returns the total number of nodes #xx
 # head: returns the first node            #xx
 # tail: returns the last node             #xx
@@ -96,5 +96,16 @@ class List
         @list.last.node[:pointer] = nil
 
         @list
+    end
+
+
+    def exists?(data)
+        @list.each do |node|
+            if node.node[:data] == data
+                return true
+            end
+        end
+
+        return false
     end
 end
