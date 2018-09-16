@@ -28,4 +28,7 @@ puts "\n"
 p my_list.pop
 puts "\n"
 puts "Check 'dog': #{my_list.exists?("dog")}"
-puts "Check 'Dave: #{my_list.exists?("world!")}"
+puts "Check 'world!: #{my_list.exists?("world!")}"
+puts "Index of 'world!': #{my_list.find("world!")}"
+puts "Index of 'cheese': #{my_list.find("cheese")}"
+puts "Index of 'caravan': #{my_list.find("caravan")}"

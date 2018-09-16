@@ -8,8 +8,8 @@
 # tail: returns the last node             #xx
 # at(i): returns the node at index        #xx
 # pop: removes the last element           #xx
-# contains?(el): TRUE if (el) exists      #
-# find(el): if TRUE returns index with el #
+# contains?(el): TRUE if (el) exists      #xx
+# find(el): if TRUE returns index with el #xx
 # to_s: print entire list as string       #xx
 #     ( data ) -> ( data ) -> ( data )    #xx
 ###########################################
@@ -99,13 +99,22 @@ class List
     end
 
 
-    def exists?(data)
+    def exists?(el)
         @list.each do |node|
-            if node.node[:data] == data
+            if node.node[:data] == el
                 return true
             end
         end
 
+        return false
+    end
+
+    def find(el)
+        @list.each_with_index do |node, i|
+            if node.node[:data] == el
+                return i
+            end
+        end
         return false
     end
 end
