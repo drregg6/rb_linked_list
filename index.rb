@@ -3,18 +3,21 @@ require './node'
 
 my_list = List.new
 
-# my_list.append(
-# {
-#     :name=>"Dave",
-#     :age=>24,
-#     :occupation=>"Realtor"
-# })
 my_list.append("Hello")
 my_list.append("world!")
+my_list.append("This")
+my_list.append("will")
+my_list.append("be")
+my_list.append("cheese")
+my_list.append("and")
+my_list.append("crackers")
+
 p my_list.node
-p my_list.size
+puts "The size of the linked list: #{my_list.size}"
+puts "\n"
 puts my_list.to_s
-puts my_list.at(1)
-puts my_list.at(4)
-p my_list.head
-p my_list.tail
+puts "At index (1): #{my_list.at(1)}"
+puts "At index (4): #{my_list.at(4)}"
+puts "\n"
+puts "Head: #{my_list.head}"
+puts "Tail: #{my_list.tail}"

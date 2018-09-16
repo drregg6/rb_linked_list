@@ -30,8 +30,7 @@ class List
         @list.push(Node.new(data))
         @list[@node_index].node[:pointer] = @node_index
 
-
-        p @list
+        @list
     end
 
 
@@ -55,6 +54,8 @@ class List
         @str
     end
 
+
+
     def at(index)
         if (@list.at(index) == nil)
             return "no such index"
@@ -63,11 +64,23 @@ class List
         end
     end
 
+
+
     def head
         @list.first.node[:data]
     end
 
+
+
     def tail
         @list.last.node[:data]
+    end
+
+
+    def pop
+        @list.pop
+        @list.tail.node[:pointer] = nil
+
+        @list
     end
 end
