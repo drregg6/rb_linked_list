@@ -1,7 +1,7 @@
 ###########################################
 #                METHODS                  #
 ###########################################
-# append: add new node to the end         #
+# append: add new node to the end         #xx
 # prepend: add new node to the beginning  #
 # size: returns the total number of nodes #
 # head: returns the first node            #
@@ -10,8 +10,8 @@
 # pop: removes the last element           #
 # contains?(el): TRUE if (el) exists      #
 # find(el): if TRUE returns index with el #
-# to_s: print entire list as string       #
-#     ( data ) -> ( data ) -> ( data )    #
+# to_s: print entire list as string       #xx
+#     ( data ) -> ( data ) -> ( data )    #xx
 ###########################################
 
 class List
@@ -23,23 +23,24 @@ class List
         @length = @list.length
     end
 
-    def create_node(data=nil, pointer=nil)
-        @node = Node.new(data, pointer)
-    end
+
 
     def append(data)
         @node_index = @list.size
-        @node = Node.new(data)
-        @list.push(@node)
+        @list.push(Node.new(data))
         @list[@node_index].node[:pointer] = @node_index
 
 
         p @list
     end
 
+
+
     def size
         @size = @list.length
     end
+
+
 
     def to_s
         @str = ""
@@ -52,5 +53,13 @@ class List
             end
         end
         @str
+    end
+
+    def at(index)
+        if (@list.at(index) == nil)
+            return "no such index"
+        else
+            @list[index].node[:data]
+        end
     end
 end
