@@ -24,11 +24,12 @@ class List
     end
 
 
-
+# appended nodes are added to the end of the list
+# the pointer should always point to nil
     def append(data)
         @node_index = @list.size
         @list.push(Node.new(data))
-        @list[@node_index].node[:pointer] = @node_index
+        @list[@node_index].node[:pointer] = @node_index + 1
 
         @list
     end
@@ -79,7 +80,7 @@ class List
 
     def pop
         @list.pop
-        @list.tail.node[:pointer] = nil
+        @list.last.node[:pointer] = nil
 
         @list
     end

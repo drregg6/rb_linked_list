@@ -21,3 +21,5 @@ puts "At index (4): #{my_list.at(4)}"
 puts "\n"
 puts "Head: #{my_list.head}"
 puts "Tail: #{my_list.tail}"
+puts "\n"
+p my_list.pop
