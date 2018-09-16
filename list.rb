@@ -3,10 +3,10 @@
 ###########################################
 # append: add new node to the end         #xx
 # prepend: add new node to the beginning  #
-# size: returns the total number of nodes #
-# head: returns the first node            #
-# tail: returns the last node             #
-# at(i): returns the node at index        #
+# size: returns the total number of nodes #xx
+# head: returns the first node            #xx
+# tail: returns the last node             #xx
+# at(i): returns the node at index        #xx
 # pop: removes the last element           #
 # contains?(el): TRUE if (el) exists      #
 # find(el): if TRUE returns index with el #
@@ -61,5 +61,13 @@ class List
         else
             @list[index].node[:data]
         end
+    end
+
+    def head
+        @list.first.node[:data]
+    end
+
+    def tail
+        @list.last.node[:data]
     end
 end

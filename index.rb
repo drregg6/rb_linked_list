@@ -16,3 +16,5 @@ p my_list.size
 puts my_list.to_s
 puts my_list.at(1)
 puts my_list.at(4)
+p my_list.head
+p my_list.tail
